@@ -79,11 +79,15 @@ namespace GameOfLife
                         if (xArray.Length != ySize)
                         {
                             Console.WriteLine(invalidEntry);
+                            //make a new array of the appropriate size and randomize it.
+                            //also, if blank values are used, 
+                            //this is a quick way to generate a randomized grid of any size specified earlier
                             xArray = new int[ySize];
                             xArray = xArray.Select(x => x = random.Next(2)).ToArray();
                         }
                         tmpArrayList.Add(xArray);
                     }
+                    //can't convert List<int[]> to 2D array, so convert to multidimensional and map.
                     int[][] tmpArray = tmpArrayList.ToArray();
                     gameArray = new int[xSize, ySize];
                     for (int x = 0; x< gameArray.GetLength(0); x++)
@@ -92,7 +96,7 @@ namespace GameOfLife
                             gameArray[x, y] = tmpArray[x][y];
                         }
                     break;
-                case "3":
+                case "3"://don't do anything.  newing up the game will randomize a 5x5
                     break;
                 default:
                     Console.WriteLine(invalidEntry);
@@ -117,22 +121,7 @@ namespace GameOfLife
                     break;
                 }
             }
-
-            //int[,] testArray1 = new int[5, 5]
-            //    { { 0, 1, 0, 0, 0 },
-
-            //    { 1, 0, 0, 1, 1 },
-
-            //    { 1, 1, 0, 0, 1 },
-
-            //    { 0, 1, 0, 0, 0 },
-
-            //    { 1, 0, 0, 0, 1 } };
-            //game.SetValues(testArray1);
-            //Console.WriteLine(game.PrintStatus());
-            //game.StepForward();
-            //Console.WriteLine(game.PrintStatus());
-            //Console.ReadLine();
+            
         }
     }
 }
