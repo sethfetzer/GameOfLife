@@ -76,11 +76,11 @@ namespace GameOfLife
                         Console.WriteLine("Please enter your values (0s and 1s) for row {0}, with no spaces or commas:", i + 1);
                         string rowData = Console.ReadLine();
                         int[] xArray = rowData.ToArray<char>().Select(x => Convert.ToInt32(x.ToString())).ToArray();
-                        if (xArray.Length > xSize)
+                        if (xArray.Length != ySize)
                         {
                             Console.WriteLine(invalidEntry);
                             xArray = new int[xSize];
-                            xArray.ToList().ForEach(x => x = random.Next(2));
+                            xArray = xArray.Select(x => x = random.Next(2)).ToArray();
                         }
                         tmpArrayList.Add(xArray);
                     }
