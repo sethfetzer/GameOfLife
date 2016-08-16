@@ -28,6 +28,7 @@ namespace GameOfLife
                     switch (option2)
                     {
                         case "1":
+                            //test example
                             gameArray = new int[5, 5]
                                 { { 0, 1, 0, 0, 0 },
                                   { 1, 0, 0, 1, 1 },
@@ -37,6 +38,7 @@ namespace GameOfLife
                             break;
                             
                         case "2":
+                            //oscillator blinker
                             gameArray = new int[5, 5]
                                 { { 0, 1, 0, 0, 0 },
                                   { 0, 1, 0, 0, 0 },
@@ -45,6 +47,7 @@ namespace GameOfLife
                                   { 0, 0, 0, 0, 0 } };
                             break;
                         case "3":
+                            //static beehive
                             gameArray = new int[5, 5]
                                 { { 0, 0, 0, 0, 0 },
                                   { 0, 0, 1, 1, 0 },
@@ -78,6 +81,7 @@ namespace GameOfLife
                         int[] xArray = rowData.ToArray<char>().Select(x => Convert.ToInt32(x.ToString())).ToArray();
                         if (xArray.Length != ySize)
                         {
+                            //expected size does not match with data entered.
                             Console.WriteLine(invalidEntry);
                             //make a new array of the appropriate size and randomize it.
                             //also, if blank values are used, 
@@ -87,7 +91,7 @@ namespace GameOfLife
                         }
                         tmpArrayList.Add(xArray);
                     }
-                    //can't convert List<int[]> to 2D array, so convert to multidimensional and map.
+                    //can't convert List<int[]> to int[,] array, so convert to int[][] and map.
                     int[][] tmpArray = tmpArrayList.ToArray();
                     gameArray = new int[xSize, ySize];
                     for (int x = 0; x< gameArray.GetLength(0); x++)
@@ -109,7 +113,7 @@ namespace GameOfLife
             else
                 game = new Game();
             Console.WriteLine(game.PrintStatus());
-
+            Console.WriteLine("Press Q to exit, or any other key to contiue.");
             while (Console.ReadLine() != "q")
             {
                 game.StepForward();
