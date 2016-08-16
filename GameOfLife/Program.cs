@@ -79,13 +79,13 @@ namespace GameOfLife
                         if (xArray.Length != ySize)
                         {
                             Console.WriteLine(invalidEntry);
-                            xArray = new int[xSize];
+                            xArray = new int[ySize];
                             xArray = xArray.Select(x => x = random.Next(2)).ToArray();
                         }
                         tmpArrayList.Add(xArray);
                     }
                     int[][] tmpArray = tmpArrayList.ToArray();
-                    gameArray = new int[tmpArray.Length, tmpArray[0].Length];
+                    gameArray = new int[xSize, ySize];
                     for (int x = 0; x< gameArray.GetLength(0); x++)
                         for(int y =0; y< gameArray.GetLength(1); y++)
                         {
