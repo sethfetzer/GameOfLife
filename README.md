@@ -16,17 +16,27 @@ the next generation (survival)
 live cell (reproduction)
 
 As an example, this game board as input:
+
 0 1 0 0 0
+
 1 0 0 1 1
+
 1 1 0 0 1
+
 0 1 0 0 0
+
 1 0 0 0 1
 
 Will have a subsequent generation of:
+
 0 0 0 0 0
+
 1 0 1 1 1
+
 1 1 1 1 1
+
 0 1 0 0 0
+
 0 0 0 0 0
 
 This solution can be run through the GameOfLife project.  
