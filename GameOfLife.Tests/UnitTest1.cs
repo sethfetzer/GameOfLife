@@ -13,24 +13,16 @@ namespace GameOfLife.Tests
             Game game = new Game();
             int[,] testArray1 = new int[5, 5] 
                 { { 0, 1, 0, 0, 0 },
-
                   { 1, 0, 0, 1, 1 },
-
                   { 1, 1, 0, 0, 1 },
-
                   { 0, 1, 0, 0, 0 },
-
                   { 1, 0, 0, 0, 1 } };
 
             int[,] expectedOutput1 = new int[5, 5]
                 { { 0, 0, 0, 0, 0 },
-
                   { 1, 0, 1, 1, 1 },
-
                   { 1, 1, 1, 1, 1 },
-
                   { 0, 1, 0, 0, 0 },
-
                   { 0, 0, 0, 0, 0 } };
 
             game.SetValues(testArray1);
@@ -50,24 +42,16 @@ namespace GameOfLife.Tests
             Game game = new Game();
             int[,] testArray1 = new int[5, 5]
                 { { 0, 1, 0, 0, 0 },
-
                   { 0, 1, 0, 0, 0 },
-
                   { 0, 1, 0, 0, 0 },
-
                   { 0, 0, 0, 0, 0 },
-
                   { 0, 0, 0, 0, 0 } };
 
             int[,] expectedOutput1 = new int[5, 5]
                 { { 0, 0, 0, 0, 0 },
-
                   { 1, 1, 1, 0, 0 },
-
                   { 0, 0, 0, 0, 0 },
-
                   { 0, 0, 0, 0, 0 },
-
                   { 0, 0, 0, 0, 0 } };
 
             game.SetValues(testArray1);
@@ -95,13 +79,9 @@ namespace GameOfLife.Tests
             Game game = new Game();
             int[,] testArray1 = new int[5, 5]
                 { { 0, 0, 0, 0, 0 },
-
                   { 0, 0, 1, 1, 0 },
-
                   { 0, 1, 0, 0, 1 },
-
                   { 0, 0, 1, 1, 0 },
-
                   { 0, 0, 0, 0, 0 } };
 
             
